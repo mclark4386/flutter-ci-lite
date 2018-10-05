@@ -1,6 +1,6 @@
 FROM google/dart:2.0
 MAINTAINER  Matthew Clark <mclark4386@gmail.com>
-LABEL Description="Dart SDK with content-shell"
+LABEL Description="Dart SDK + Flutter"
 
 # Configuration
 ENV CHANNEL stable
@@ -31,6 +31,8 @@ ENV PATH=/flutter/bin:$PATH
 RUN flutter doctor
 RUN apt-get  -y --force-yes install libstdc++6 fonts-droid
 RUN flutter doctor
+RUN flutter channel beta
+RUN flutter upgrade
 
 # https://circleci.com/docs/2.0/high-uid-error/
 RUN rm -rfv /flutter/bin/cache/artifacts/gradle_wrapper/
