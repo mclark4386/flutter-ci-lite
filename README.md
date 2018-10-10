@@ -1,8 +1,1 @@
-# flutter-ci-lite
-
-```html
-&lt;form method="POST" ...&gt;
-  &lt;input type="hidden" name="_method" value="PUT" /&gt;
-...
-```
-testing
+Light weight docker image to do flutter CI testing.
