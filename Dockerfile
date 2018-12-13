@@ -4,7 +4,7 @@ LABEL Description="Dart SDK + Flutter"
 
 # Configuration
 ENV CHANNEL stable
-ENV SDK_VERSION 2.0.0
+ENV SDK_VERSION 2.1.0
 ENV ARCHIVE_URL https://storage.googleapis.com/dart-archive/channels/$CHANNEL/release/$SDK_VERSION
 ENV PATH $PATH:/usr/lib/dart/bin
 
