@@ -12,7 +12,7 @@ ENV PATH $PATH:/usr/lib/dart/bin
 RUN echo "deb http://us.archive.ubuntu.com/ubuntu precise main multiverse" \ 
     >> /etc/apt/sources.list
 RUN apt-get update; echo 'true'
-RUN apt-get install -y --force-yes git wget unzip xvfb chromedriver libgconf-2-4 gdb
+RUN apt-get install -y --force-yes git wget unzip xvfb chromedriver libgconf-2-4 gdb lib32stdc++6
 
 # https://github.com/dart-lang/sdk/issues/28549#issuecomment-277534958
 RUN apt-get install -y --force-yes gdb
