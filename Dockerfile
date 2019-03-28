@@ -31,7 +31,7 @@ ENV PATH=/flutter/bin:$PATH
 RUN flutter doctor
 RUN apt-get  -y --force-yes install libstdc++6 fonts-droid
 RUN flutter doctor
-RUN flutter channel beta
+RUN flutter channel stable
 RUN flutter upgrade
 
 # https://circleci.com/docs/2.0/high-uid-error/
