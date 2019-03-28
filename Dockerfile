@@ -1,29 +1,6 @@
-FROM google/dart:2.0
+FROM google/dart:latest
 MAINTAINER  Matthew Clark <mclark4386@gmail.com>
 LABEL Description="Dart SDK + Flutter"
-
-# Configuration
-ENV CHANNEL stable
-ENV SDK_VERSION 2.1.0
-ENV ARCHIVE_URL https://storage.googleapis.com/dart-archive/channels/$CHANNEL/release/$SDK_VERSION
-ENV PATH $PATH:/usr/lib/dart/bin
-
-# Install third-party dependencies.
-RUN echo "deb http://us.archive.ubuntu.com/ubuntu precise main multiverse" \ 
-    >> /etc/apt/sources.list
-RUN apt-get update; echo 'true'
-RUN apt-get install -y --force-yes git wget unzip xvfb chromedriver libgconf-2-4 gdb lib32stdc++6
-
-# https://github.com/dart-lang/sdk/issues/28549#issuecomment-277534958
-RUN apt-get install -y --force-yes gdb
-
-RUN apt-get clean
-
-# Download the SDK.
-RUN wget $ARCHIVE_URL/sdk/dartsdk-linux-x64-release.zip
-RUN unzip dartsdk-linux-x64-release.zip
-RUN cp -r dart-sdk/* /usr/local
-RUN rm -rf dartsdk-linux-x64-release.zip
 
 # Install Flutter.
 RUN cd / && git clone -b dev https://github.com/flutter/flutter.git
