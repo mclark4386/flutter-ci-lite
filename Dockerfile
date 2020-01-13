@@ -14,6 +14,7 @@ RUN apt-get clean
 RUN cd / && git clone -b dev https://github.com/flutter/flutter.git
 ENV PATH=/flutter/bin:$PATH
 RUN flutter doctor
+#current stable is 1.12.13+hotfix.5
 RUN flutter channel stable
 RUN flutter upgrade
 
